@@ -1,0 +1,14 @@
+<div class="containerU" *ngIf="user">
+  <img class="userImg" [src]="user.results[0].picture.large" />
+  <p class="user">
+    Hola {{ user.results[0].name.last }}, {{ user.results[0].name.first }}
+  </p>
+</div>
+<div class="line"></div>
+<div class="containerProd" *ngIf="product">
+  <div class="prodSpec" *ngFor="let p of product">
+    <h2 class="prod">{{ p.title }}</h2>
+    <p class="prod">$ {{ p.price }}</p>
+    <img class="userImg" id="prodImg" [src]="p.images[0]" alt="" />
+  </div>
+</div>

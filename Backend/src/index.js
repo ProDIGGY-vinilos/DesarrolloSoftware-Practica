@@ -10,7 +10,6 @@ const server = http.createServer((req, res) => {
   const __dirname = path.dirname(__filename);
   const url =
     req.url === '/' ? '/index.html' : req.url;
-  console.log(__dirname);
   const filePath = path.join(
     __dirname,
     'static',
@@ -87,8 +86,6 @@ const logRequest = (
     }
   });
 };
-
-/*PREGUNTAR DIFERENCIAS ENTRE EL SETHEADER Y EL WRITEHEAD Y EL SERVER.ON*/
 
 server.listen(port, () => {
   console.log(`server listening on port ${port}`);
