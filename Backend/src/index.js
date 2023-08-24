@@ -18,7 +18,9 @@ const server = http.createServer((req, res) => {
 
   if (req.method !== 'GET') {
     res.statusCode = 405;
-    res.end('Método no permitido');
+    res.end(
+      'Método no permitido aaa prueba testing'
+    );
     logRequest(
       req,
       res.statusCode,
