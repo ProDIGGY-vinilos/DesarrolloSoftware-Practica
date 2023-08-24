@@ -29,6 +29,17 @@ const server = http.createServer((req, res) => {
     return;
   }
 
+  if (req.method !== 'GET') {
+    res.statusCode = 405;
+    res.end('Método ');
+    logRequest(
+      req,
+      res.statusCode,
+      res.statusMessage
+    );
+    return;
+  }
+
   fs.access(filePath, fs.constants.F_OK, (err) => {
     if (err) {
       res.writeHead(404, {
